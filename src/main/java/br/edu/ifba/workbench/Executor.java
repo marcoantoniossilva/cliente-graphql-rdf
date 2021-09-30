@@ -1,12 +1,12 @@
 package br.edu.ifba.workbench;
 
-import br.edu.ifba.workbench.escritores.impl.EscritorGraphQL;
-import br.edu.ifba.workbench.escritores.impl.EscritorRDF;
-import br.edu.ifba.workbench.leitores.impl.LeitorGraphQL;
-import br.edu.ifba.workbench.leitores.impl.LeitorRDF;
+import br.edu.ifba.workbench.escritores.EscritorGraphQL;
+import br.edu.ifba.workbench.escritores.EscritorRDF;
+import br.edu.ifba.workbench.leitores.LeitorGraphQL;
+import br.edu.ifba.workbench.leitores.LeitorRDF;
 import br.edu.ifba.workbench.testes.ITestes;
-import br.edu.ifba.workbench.testes.impl.ResultadoTeste;
-import br.edu.ifba.workbench.testes.impl.Testes;
+import br.edu.ifba.workbench.testes.ResultadoTeste;
+import br.edu.ifba.workbench.testes.Testes;
 
 public class Executor {
 
