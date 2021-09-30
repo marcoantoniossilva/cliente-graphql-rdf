@@ -3,15 +3,13 @@ package br.edu.ifba.workbench.modelos;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 public class GraphQLRequestBody {
 
   private String operationName;
   private String query;
-  private String variables = "{}";
+  private String variables;
 
   private GraphQLRequestBody() {}
 
@@ -40,14 +38,11 @@ public class GraphQLRequestBody {
     }
 
     public GraphQLRequestBodyBuilder variables(Map<String, Object> variables) {
-      this.graphQLRequestBody.variables = gson.toJson(Objects.nonNull(variables) ? variables : new HashMap<>());
+      this.graphQLRequestBody.variables = gson.toJson(variables);
       return this;
     }
 
     public GraphQLRequestBody build() {
-      if (Objects.isNull(this.graphQLRequestBody.variables)) {
-        this.graphQLRequestBody.variables = gson.toJson(new HashMap<>());
-      }
       return graphQLRequestBody;
     }
 
