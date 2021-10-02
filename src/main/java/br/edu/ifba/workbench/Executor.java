@@ -4,14 +4,14 @@ import br.edu.ifba.workbench.escritores.EscritorGraphQL;
 import br.edu.ifba.workbench.escritores.EscritorRDF;
 import br.edu.ifba.workbench.leitores.LeitorGraphQL;
 import br.edu.ifba.workbench.leitores.LeitorRDF;
-import br.edu.ifba.workbench.testes.ITestes;
+import br.edu.ifba.workbench.testes.ITestador;
 import br.edu.ifba.workbench.testes.ResultadoTeste;
-import br.edu.ifba.workbench.testes.Testes;
+import br.edu.ifba.workbench.testes.Testador;
 
 public class Executor {
 
   public static void main(String[] args) {
-    ITestes testador = new Testes();
+    ITestador testador = new Testador();
 
     // RDF Tests
     ResultadoTeste resultadoTesteEscritaRDF = testador.testarEscrita(new EscritorRDF());
