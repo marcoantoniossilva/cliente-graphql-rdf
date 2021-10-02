@@ -1,14 +1,14 @@
 package br.edu.ifba.workbench.exemplos.mutations;
 
-import br.edu.ifba.workbench.http.client.GraphQLClient;
-import br.edu.ifba.workbench.modelos.GraphQLRequestBody;
+import br.edu.ifba.workbench.http.client.ClienteGraphQL;
+import br.edu.ifba.workbench.modelos.CorpoRequisicaoGraphQL;
 
 import java.io.IOException;
 
 public class DesaparecimentosMutationExample {
 
   public static void main(String[] args) throws IOException {
-    GraphQLRequestBody body = GraphQLRequestBody.builder()
+    CorpoRequisicaoGraphQL body = CorpoRequisicaoGraphQL.builder()
       .query("""
          mutation {
            criarDesaparecimentos(
@@ -42,7 +42,7 @@ public class DesaparecimentosMutationExample {
       )
       .build();
 
-    String response = new GraphQLClient("http://localhost:4000").call(body);
+    String response = new ClienteGraphQL("http://localhost:4000").executar(body);
     System.out.println(response);
   }
 

@@ -1,7 +1,7 @@
 package br.edu.ifba.workbench.exemplos.queries;
 
-import br.edu.ifba.workbench.http.client.GraphQLClient;
-import br.edu.ifba.workbench.modelos.GraphQLRequestBody;
+import br.edu.ifba.workbench.http.client.ClienteGraphQL;
+import br.edu.ifba.workbench.modelos.CorpoRequisicaoGraphQL;
 
 import java.io.IOException;
 import java.util.Collections;
@@ -9,7 +9,7 @@ import java.util.Collections;
 public class DesaparecimentosQueryExample {
 
   public static void main(String[] args) throws IOException {
-    GraphQLRequestBody body = GraphQLRequestBody.builder()
+    CorpoRequisicaoGraphQL body = CorpoRequisicaoGraphQL.builder()
       .query("""
          query($id: Int) {
            desaparecimento(filtro: { codDesaparecimento: $id }) {
@@ -40,7 +40,7 @@ public class DesaparecimentosQueryExample {
       .variables(Collections.singletonMap("id", 8888))
       .build();
 
-    String response = new GraphQLClient("http://localhost:4000").call(body);
+    String response = new ClienteGraphQL("http://localhost:4000").executar(body);
     System.out.println(response);
   }
 
