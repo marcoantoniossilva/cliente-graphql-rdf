@@ -3,8 +3,8 @@ package br.edu.ifba.workbench.modelos;
 public class Desaparecimento {
 
   private Integer codDesaparecimento;
-  private Integer pessoa;
-  private Integer local;
+  private Integer codPessoa;
+  private Integer codLocal;
   private String dataDesaparecimento;
   private String informacoes;
   private String fonte;
@@ -19,19 +19,19 @@ public class Desaparecimento {
     return this;
   }
 
-  public Integer getPessoa() {
-    return pessoa;
+  public Integer getCodPessoa() {
+    return codPessoa;
   }
-  public Desaparecimento setPessoa(Integer pessoa) {
-    this.pessoa = pessoa;
+  public Desaparecimento setCodPessoa(Integer codPessoa) {
+    this.codPessoa = codPessoa;
     return this;
   }
 
-  public Integer getLocal() {
-    return local;
+  public Integer getCodLocal() {
+    return codLocal;
   }
-  public Desaparecimento setLocal(Integer local) {
-    this.local = local;
+  public Desaparecimento setCodLocal(Integer codLocal) {
+    this.codLocal = codLocal;
     return this;
   }
 

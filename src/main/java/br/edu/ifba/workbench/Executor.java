@@ -2,6 +2,10 @@ package br.edu.ifba.workbench;
 
 import br.edu.ifba.workbench.escritores.EscritorGraphQL;
 import br.edu.ifba.workbench.escritores.EscritorRDF;
+import br.edu.ifba.workbench.escritores.IEscritorDados;
+import br.edu.ifba.workbench.geradores.FakerGeradorDados;
+import br.edu.ifba.workbench.geradores.IGeradorDados;
+import br.edu.ifba.workbench.leitores.ILeitorDados;
 import br.edu.ifba.workbench.leitores.LeitorGraphQL;
 import br.edu.ifba.workbench.leitores.LeitorRDF;
 import br.edu.ifba.workbench.testes.ITestador;
@@ -10,16 +14,30 @@ import br.edu.ifba.workbench.testes.Testador;
 
 public class Executor {
 
+  private static final String URL_SERVIDOR_GRAPHQL = "http://localhost:4000";
+
   public static void main(String[] args) {
-    ITestador testador = new Testador();
+    // Dependência comum GraphQL e RDF
+    IGeradorDados geradorDados = new FakerGeradorDados();
 
-    // RDF Tests
-    ResultadoTeste resultadoTesteEscritaRDF = testador.testarEscrita(new EscritorRDF());
-    ResultadoTeste resultadoTesteLeituraRDF = testador.testarLeitura(new LeitorRDF());
+    // Dependências do GRAPHQL
+    IEscritorDados escritorGraphQL = new EscritorGraphQL(URL_SERVIDOR_GRAPHQL);
+    ILeitorDados leitorGraphQL = new LeitorGraphQL();
 
-    // GraphQL Tests
-    ResultadoTeste resultadoTesteEscritaGraphQL = testador.testarEscrita(new EscritorGraphQL());
-    ResultadoTeste resultadoTesteLeituraGraphQL = testador.testarLeitura(new LeitorGraphQL());
+    // Dependências do RDP
+    IEscritorDados escritorRDF = new EscritorRDF();
+    ILeitorDados leitorRDF = new LeitorRDF();
+
+    ITestador testadorGraphQL = new Testador(escritorGraphQL, leitorGraphQL, geradorDados);
+    ITestador testadorRDF = new Testador(escritorRDF, leitorRDF, geradorDados);
+
+    // RDF Testes
+    ResultadoTeste resultadoTesteEscritaRDF = testadorRDF.testarEscrita();
+    ResultadoTeste resultadoTesteLeituraRDF = testadorRDF.testarLeitura();
+
+    // GraphQL Testes
+    ResultadoTeste resultadoTesteEscritaGraphQL = testadorGraphQL.testarEscrita();
+    ResultadoTeste resultadoTesteLeituraGraphQL = testadorGraphQL.testarLeitura();
   }
 
 }
