@@ -21,15 +21,18 @@ public class Testador implements ITestador {
 
   @Override
   public ResultadoTeste testarEscrita() {
-    List<Desaparecimento> desaparecimentos = this.geradorDados.gerarDesaparecimentos(2);
-
     try {
+      List<Desaparecimento> desaparecimentos = this.geradorDados.gerarDesaparecimentos(2);
+
+      long tempoInicial = System.currentTimeMillis();
       this.escritorDados.escrever(desaparecimentos);
+      long duracaoEmSegundos = (System.currentTimeMillis() - tempoInicial) / 1000;
+
+      String duracaoTeste = "%d Segundos".formatted(duracaoEmSegundos);
+      return new ResultadoTeste().setDuracao(duracaoTeste);
     } catch (Exception exception) {
       throw new RuntimeException(exception);
     }
-
-    return null;
   }
 
   @Override
