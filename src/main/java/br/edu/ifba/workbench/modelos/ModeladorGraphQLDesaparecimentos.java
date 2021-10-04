@@ -6,7 +6,6 @@ public class ModeladorGraphQLDesaparecimentos {
 
   private static final String MODELO_DESAPARECIMENTO = """
     {
-      codDesaparecimento: COD_DESAP
       codPessoa: COD_PESS
       codLocal: COD_LOC
       dataDesaparecimento: "DATA_DESAP"
@@ -34,7 +33,6 @@ public class ModeladorGraphQLDesaparecimentos {
       .reduce(new StringBuilder(),
         (modelo, desaparecimento) ->  modelo.append(
           MODELO_DESAPARECIMENTO
-            .replace("COD_DESAP", desaparecimento.getCodDesaparecimento().toString())
             .replace("COD_PESS", desaparecimento.getCodPessoa().toString())
             .replace("COD_LOC", desaparecimento.getCodLocal().toString())
             .replace("DATA_DESAP", desaparecimento.getDataDesaparecimento())
@@ -51,11 +49,26 @@ public class ModeladorGraphQLDesaparecimentos {
 
   public String montarQueryDeDesaparecimentos() {
     return """
-      query{
-        desaparecimentos{
-          local{
-            bairro{
+      query {
+        desaparecimentos {
+          boletimOcorrencia
+          informacoes
+          pessoa {
+            nome
+            dataNascimento
+            imagem
+          }
+          local {
+            latitude
+            longitude
+            bairro {
               nomeBairro
+              cidade {
+                nomeCidade
+                uf {
+                  sigla
+                }
+              }
             }
           }
         }

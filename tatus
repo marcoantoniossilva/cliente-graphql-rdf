@@ -1,0 +1,89 @@
+[33mcommit 71ec744ca0a11e8250a98cc9434c515c5bce1bcb[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Mon Oct 4 20:54:57 2021 -0300
+
+    Alteracao da estrutura das implementacoes
+
+[33mcommit 38170440235f016bf368be66496a13d1748c0e51[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Mon Oct 4 20:41:59 2021 -0300
+
+    Adicionando slf4j e alguns logs na aplicacao
+
+[33mcommit 50bb524f6acbd6d72571b83d005e129cea40a514[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Mon Oct 4 20:40:09 2021 -0300
+
+    Adicionada biblioteca JavaFaker e logica para geracao de desaparecimentos
+
+[33mcommit db0fe6d0d3033f78ac5487f5c38f538f84e66a06[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Sun Oct 3 10:01:03 2021 -0300
+
+    Adicionando injecao de dependencias via construtor nos Leitores e Escritores e criando logica de modelagem das queries GraphQL
+
+[33mcommit b9b7de0139606ed03707785551234d1cd251b146[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Sun Oct 3 09:57:14 2021 -0300
+
+    Alteracao do nome das classes de exemplo e criacao de exemplo que busca todos os desaparecimentos
+
+[33mcommit ee1024b905b48972d367521a1148b263431a691e[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Fri Oct 1 22:43:49 2021 -0300
+
+    Renomeando serviços de teste
+
+[33mcommit 8885d8d76165174bd920bdd6e6a03bf57a7d3447[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Fri Oct 1 22:41:38 2021 -0300
+
+    Alterando idioma de alguns nomes de arquivos para PT-br
+
+[33mcommit 1bcba114eeb23ce2f306eccb165ea272451a4980[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 20:59:46 2021 -0300
+
+    Alteracao do gitignore
+
+[33mcommit 157818f7457ac518c491be4adaa671d215b4a68d[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 20:59:05 2021 -0300
+
+    Remocao da pasta target
+
+[33mcommit b32bb015d52cc92e8ab9c86ea6920fb7096136b8[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 20:52:52 2021 -0300
+
+    Alterando estrutura de pacotes
+
+[33mcommit 88e617e069746648f6e7e923d7382f32a8edb7c5[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 20:51:24 2021 -0300
+
+    Separando os exemposl de implementação em um pacote específico
+
+[33mcommit 6cf35e8f2bd2b2711219786b89cb0521ca71ba3f[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 19:23:49 2021 -0300
+
+    Adicionando httpClientComponents e criando Query de exemplo de desaparecimento
+
+[33mcommit 9408540f6871a10986ac4ec1e61207ab4645d85b[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Thu Sep 30 19:22:15 2021 -0300
+
+    Criação de .gitignore
+
+[33mcommit e2d4d3d9babbc71f0333cc2401cdaad7c815f7b5[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Wed Sep 29 22:38:07 2021 -0300
+
+    Adição do http client e criaçÃão de estrutura de geração de dados
+
+[33mcommit 5683947a06b56220baa95e07de124f52e4c5ec29[m
+Author: Marco Silva <marcoantoniosilva.tec@gmail.com>
+Date:   Wed Sep 29 22:34:04 2021 -0300
+
+    Inicialização da base do projeto com maven

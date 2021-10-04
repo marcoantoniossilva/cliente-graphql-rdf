@@ -30,7 +30,7 @@ public class EscritorGraphQL implements IEscritorDados {
         .query(mutationDeDesaparecimentos)
         .build()
     );
-    LOGGER.info("Resposta da API GraphQL para chamada de escrita: {}", respostaApi);
+    LOGGER.info("Resposta da API GraphQL para chamada de escrita: {} de desaparecimentos", respostaApi);
   }
 
 }

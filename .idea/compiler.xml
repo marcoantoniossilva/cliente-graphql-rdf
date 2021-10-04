@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="graphql-ontology-client" />
-        <module name="cliente-graphql-rdf" />
       </profile>
     </annotationProcessing>
   </component>

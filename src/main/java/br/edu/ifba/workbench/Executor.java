@@ -30,7 +30,7 @@ public class Executor {
     IEscritorDados escritorGraphQL = new EscritorGraphQL(URL_SERVIDOR_GRAPHQL);
     ILeitorDados leitorGraphQL = new LeitorGraphQL(URL_SERVIDOR_GRAPHQL);
 
-    // Dependências do RDP
+    // Dependências do RDF
     IEscritorDados escritorRDF = new EscritorRDF();
     ILeitorDados leitorRDF = new LeitorRDF();
 

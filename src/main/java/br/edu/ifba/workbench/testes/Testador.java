@@ -4,10 +4,14 @@ import br.edu.ifba.workbench.escritores.IEscritorDados;
 import br.edu.ifba.workbench.geradores.IGeradorDados;
 import br.edu.ifba.workbench.leitores.ILeitorDados;
 import br.edu.ifba.workbench.modelos.Desaparecimento;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
 public class Testador implements ITestador {
+
+  private static final Logger LOGGER = LoggerFactory.getLogger(Testador.class);
 
   private final IEscritorDados escritorDados;
   private final ILeitorDados leitorDados;
@@ -26,12 +30,13 @@ public class Testador implements ITestador {
 
       long tempoInicial = System.currentTimeMillis();
       this.escritorDados.escrever(desaparecimentos);
-      long duracaoEmSegundos = (System.currentTimeMillis() - tempoInicial) / 1000;
+      long duracaoEmMilisegundos = System.currentTimeMillis() - tempoInicial;
 
-      String duracaoTeste = "%d Segundos".formatted(duracaoEmSegundos);
-      return new ResultadoTeste().setDuracao(duracaoTeste);
+      String duracaoTeste = "%d Milisegundos".formatted(duracaoEmMilisegundos);
+      return ResultadoTeste.sucesso(duracaoTeste);
     } catch (Exception exception) {
-      throw new RuntimeException(exception);
+      LOGGER.error(exception.getMessage(), exception);
+      return ResultadoTeste.falha();
     }
   }
 
@@ -40,12 +45,13 @@ public class Testador implements ITestador {
     try {
       long tempoInicial = System.currentTimeMillis();
       this.leitorDados.ler();
-      long duracaoEmSegundos = (System.currentTimeMillis() - tempoInicial) / 1000;
+      long duracaoEmMilisegundos = System.currentTimeMillis() - tempoInicial;
 
-      String duracaoTeste = "%d Segundos".formatted(duracaoEmSegundos);
-      return new ResultadoTeste().setDuracao(duracaoTeste);
+      String duracaoTeste = "%d Milisegundos".formatted(duracaoEmMilisegundos);
+      return ResultadoTeste.sucesso(duracaoTeste);
     } catch (Exception exception) {
-      throw new RuntimeException(exception);
+      LOGGER.error(exception.getMessage(), exception);
+      return ResultadoTeste.falha();
     }
   }
 
