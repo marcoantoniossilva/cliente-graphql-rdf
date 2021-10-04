@@ -12,4 +12,8 @@ public class ResultadoTeste {
     return this;
   }
 
+  @Override
+  public String toString() {
+    return "ResultadoTeste{duracao='%s'}".formatted(duracao);
+  }
 }

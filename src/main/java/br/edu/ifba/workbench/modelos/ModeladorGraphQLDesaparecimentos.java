@@ -49,4 +49,18 @@ public class ModeladorGraphQLDesaparecimentos {
     return MODELO_MUTATION_CRIAR_DESAPARECIMENTOS.replace("DESAPARECIMENTOS", desaparecimentosFormatados);
   }
 
+  public String montarQueryDeDesaparecimentos() {
+    return """
+      query{
+        desaparecimentos{
+          local{
+            bairro{
+              nomeBairro
+            }
+          }
+        }
+      }
+      """;
+  }
+
 }

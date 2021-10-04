@@ -37,7 +37,16 @@ public class Testador implements ITestador {
 
   @Override
   public ResultadoTeste testarLeitura() {
-    return null;
+    try {
+      long tempoInicial = System.currentTimeMillis();
+      this.leitorDados.ler();
+      long duracaoEmSegundos = (System.currentTimeMillis() - tempoInicial) / 1000;
+
+      String duracaoTeste = "%d Segundos".formatted(duracaoEmSegundos);
+      return new ResultadoTeste().setDuracao(duracaoTeste);
+    } catch (Exception exception) {
+      throw new RuntimeException(exception);
+    }
   }
 
 }
