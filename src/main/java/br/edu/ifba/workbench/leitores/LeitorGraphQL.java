@@ -28,7 +28,7 @@ public class LeitorGraphQL implements ILeitorDados {
         .query(queryDeDesaparecimentos)
         .build()
     );
-    LOGGER.info("Resposta da API GraphQL para chamada de leitura de desaparecimentos: {}", respostaApi);
+    //LOGGER.info("Resposta da API GraphQL para chamada de leitura de desaparecimentos: {}", respostaApi);
   }
 
 }

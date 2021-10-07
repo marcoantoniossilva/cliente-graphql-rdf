@@ -26,7 +26,7 @@ public class Testador implements ITestador {
   @Override
   public ResultadoTeste testarEscrita() {
     try {
-      List<Desaparecimento> desaparecimentos = this.geradorDados.gerarDesaparecimentos(2);
+      List<Desaparecimento> desaparecimentos = this.geradorDados.gerarDesaparecimentos(3000);
 
       long tempoInicial = System.currentTimeMillis();
       this.escritorDados.escrever(desaparecimentos);
