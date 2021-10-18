@@ -15,21 +15,17 @@ public class Testador implements ITestador {
 
   private final IEscritorDados escritorDados;
   private final ILeitorDados leitorDados;
-  private final IGeradorDados geradorDados;
 
-  public Testador(IEscritorDados escritorDados, ILeitorDados leitorDados, IGeradorDados geradorDados) {
+  public Testador(IEscritorDados escritorDados, ILeitorDados leitorDados) {
     this.escritorDados = escritorDados;
     this.leitorDados = leitorDados;
-    this.geradorDados = geradorDados;
   }
 
   @Override
-  public ResultadoTeste testarEscrita() {
+  public ResultadoTeste testarEscrita(List<Desaparecimento> desaparecimentos) {
     try {
-      List<Desaparecimento> desaparecimentos = this.geradorDados.gerarDesaparecimentos(3000);
-
       long tempoInicial = System.currentTimeMillis();
-      this.escritorDados.escrever(desaparecimentos);
+      this.escritorDados.escreverDesaparecimentos(desaparecimentos);
       long duracaoEmMilisegundos = System.currentTimeMillis() - tempoInicial;
 
       String duracaoTeste = "%d Milisegundos".formatted(duracaoEmMilisegundos);

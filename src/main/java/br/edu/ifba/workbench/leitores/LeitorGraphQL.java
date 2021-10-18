@@ -2,7 +2,7 @@ package br.edu.ifba.workbench.leitores;
 
 import br.edu.ifba.workbench.http.client.ClienteGraphQL;
 import br.edu.ifba.workbench.modelos.CorpoRequisicaoGraphQL;
-import br.edu.ifba.workbench.modelos.ModeladorGraphQLDesaparecimentos;
+import br.edu.ifba.workbench.modeladores.ModeladorGraphQLDesaparecimentos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

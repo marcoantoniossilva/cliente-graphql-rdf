@@ -1,15 +1,22 @@
 package br.edu.ifba.workbench.geradores;
 
-import br.edu.ifba.workbench.modelos.Desaparecimento;
+import br.edu.ifba.workbench.modelos.*;
 
 import java.util.List;
 
 public interface IGeradorDados {
 
-  default Desaparecimento gerarDesaparecimento() {
-    return this.gerarDesaparecimentos(1).iterator().next();
-  }
+  List<Desaparecimento> gerarDesaparecimentos(int quantidade, int maxCodPessoa, int maxCodLocal);
 
-  List<Desaparecimento> gerarDesaparecimentos(int quantidade);
+  List<Uf> gerarUfs();
+
+  List<Cidade> gerarCidades(int quantidade);
+
+  List<Bairro> gerarBairros(int quantidade, int maxCodCidade);
+
+  List<Local> gerarLocais(int quantidade, int maxCodBairro);
+
+  List<Pessoa> gerarPessoas(int quantidade);
+
 
 }

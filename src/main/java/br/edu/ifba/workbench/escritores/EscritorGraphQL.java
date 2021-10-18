@@ -1,9 +1,8 @@
 package br.edu.ifba.workbench.escritores;
 
 import br.edu.ifba.workbench.http.client.ClienteGraphQL;
-import br.edu.ifba.workbench.modelos.CorpoRequisicaoGraphQL;
-import br.edu.ifba.workbench.modelos.Desaparecimento;
-import br.edu.ifba.workbench.modelos.ModeladorGraphQLDesaparecimentos;
+import br.edu.ifba.workbench.modelos.*;
+import br.edu.ifba.workbench.modeladores.ModeladorGraphQLDesaparecimentos;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -23,14 +22,43 @@ public class EscritorGraphQL implements IEscritorDados {
   }
 
   @Override
-  public void escrever(List<Desaparecimento> desaparecimentos) throws IOException {
+  public void escreverDesaparecimentos(List<Desaparecimento> desaparecimentos) throws IOException {
     String mutationDeDesaparecimentos = this.modeladorGraphQL.montarMutationDeDesaparecimentos(desaparecimentos);
-    String respostaApi = this.clienteGraphQL.executar(
-      CorpoRequisicaoGraphQL.builder()
-        .query(mutationDeDesaparecimentos)
-        .build()
-    );
+    String respostaApi = chamarClienteGraphQL(mutationDeDesaparecimentos);
     LOGGER.info("Resposta da API GraphQL para chamada de escrita: {} de desaparecimentos", respostaApi);
+  }
+
+  @Override
+  public void escreverUfs(List<Uf> ufs) throws IOException {
+
+  }
+
+  @Override
+  public void escreverCidades(List<Cidade> cidades) throws IOException {
+
+  }
+
+  @Override
+  public void escreverBairros(List<Bairro> bairros) throws IOException {
+
+  }
+
+  @Override
+  public void escreverLocais(List<Local> locais) throws IOException {
+
+  }
+
+  @Override
+  public void escreverPessoas(List<Pessoa> pessoas) throws IOException {
+
+  }
+
+  public String chamarClienteGraphQL(String mutation) throws IOException {
+    return this.clienteGraphQL.executar(
+        CorpoRequisicaoGraphQL.builder()
+            .query(mutation)
+            .build()
+    );
   }
 
 }
