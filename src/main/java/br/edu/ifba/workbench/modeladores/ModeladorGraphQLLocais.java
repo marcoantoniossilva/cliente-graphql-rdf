@@ -10,8 +10,8 @@ public class ModeladorGraphQLLocais {
       {
         codLocal: COD_LOCAL
         codBairro: COD_BAIRRO
-        latitude: LATITUDE_LOCAL
-        longitude: LONGITUDE_LOCAL
+        latitude: "LATITUDE_LOCAL"
+        longitude: "LONGITUDE_LOCAL"
       }
       """;
 

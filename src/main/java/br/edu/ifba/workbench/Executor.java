@@ -8,7 +8,7 @@ import br.edu.ifba.workbench.geradores.IGeradorDados;
 import br.edu.ifba.workbench.leitores.ILeitorDados;
 import br.edu.ifba.workbench.leitores.LeitorGraphQL;
 import br.edu.ifba.workbench.leitores.LeitorRDF;
-import br.edu.ifba.workbench.modelos.Desaparecimento;
+import br.edu.ifba.workbench.modelos.*;
 import br.edu.ifba.workbench.testes.ITestador;
 import br.edu.ifba.workbench.testes.ResultadoTeste;
 import br.edu.ifba.workbench.testes.Testador;
@@ -38,15 +38,15 @@ public class Executor {
     IEscritorDados escritorRDF = new EscritorRDF(Constantes.URI_ONTOLOGIA_RDF);
     ILeitorDados leitorRDF = new LeitorRDF(Constantes.URI_ONTOLOGIA_RDF);
 
+    // Instanciação de classe responsável por gerar e povoar RDF e GraphQL com os mesmos dados
+    Povoador povoadorDados = new Povoador(geradorDados, escritorRDF, escritorGraphQL);
+    povoadorDados.povoarDadosPadrao();
 
-    Povoador povoador = new Povoador(escritorRDF, geradorDados);
-    povoador.povoarDados();
-
-    // Lista de desaparecimentos utilizada nos testes de escrita RDF e GraphQL
+    // Criação da lista de desaparecimentos para testes de leitura/escrita em RDF e GraphQL
     List<Desaparecimento> desaparecimentos = geradorDados.gerarDesaparecimentos(
-        Constantes.qtdDesaparecimentosParaGerar,
-        Constantes.qtdPessoasParaGerar,
-        Constantes.qtdLocaisParaGerar);
+        Constantes.DadosPadrao.QTD_DESAPARECIMENTOS_PARA_GERAR,
+        Constantes.DadosPadrao.QTD_PESSOAS_PARA_GERAR,
+        Constantes.DadosPadrao.QTD_LOCAIS_PARA_GERAR);
 
     ITestador testadorGraphQL = new Testador(escritorGraphQL, leitorGraphQL);
     ITestador testadorRDF = new Testador(escritorRDF, leitorRDF);

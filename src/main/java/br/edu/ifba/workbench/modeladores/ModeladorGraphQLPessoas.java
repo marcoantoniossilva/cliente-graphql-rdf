@@ -16,8 +16,8 @@ public class ModeladorGraphQLPessoas {
         corOlhos: "COR_OLHOS_PESSOA"
         corPele: "COR_PELE_PESSOA"
         corCabelo: "COR_CABELO_PESSOA"
-        pesoAproximado: "PESO_APROXIMADO_PESSOA"
-        alturaAproximada: "ALTURA_APROXIMADA_PESSOA"
+        pesoAproximado: PESO_APROXIMADO_PESSOA
+        alturaAproximada: ALTURA_APROXIMADA_PESSOA
         tipoFisico: "TIPO_FISICO_PESSOA"
         transtornoMental: "TRANSTORNO_MENTAL_PESSOA"
         marcaCaracteristica: "MARCA_CARACTERISTICA_PESSOA"
@@ -49,8 +49,8 @@ public class ModeladorGraphQLPessoas {
                     .replace("COR_OLHOS_PESSOA", String.valueOf(pessoa.getCorOlhos()))
                     .replace("COR_PELE_PESSOA", pessoa.getCorPele())
                     .replace("COR_CABELO_PESSOA", pessoa.getCorCabelo())
-                    .replace("PESO_APROXIMADO_PESSOA", pessoa.getPesoAproximado())
-                    .replace("ALTURA_APROXIMADA_PESSOA", pessoa.getAlturaAproximada())
+                    .replace("PESO_APROXIMADO_PESSOA", pessoa.getPesoAproximado().toString())
+                    .replace("ALTURA_APROXIMADA_PESSOA", pessoa.getAlturaAproximada().toString())
                     .replace("TIPO_FISICO_PESSOA", pessoa.getTipoFisico())
                     .replace("TRANSTORNO_MENTAL_PESSOA", pessoa.getTranstornoMental())
                     .replace("MARCA_CARACTERISTICA_PESSOA", pessoa.getMarcaCaracteristica())

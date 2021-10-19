@@ -5,14 +5,14 @@ public class Pessoa {
   private Integer codPessoa;
   private String imagem;
   private String sexo;
-  private String pesoAproximado;
+  private Float pesoAproximado;
   private String corPele;
   private String corOlhos;
   private String dataNascimento;
   private String nome;
   private String tipoFisico;
   private String marcaCaracteristica;
-  private String alturaAproximada;
+  private Float alturaAproximada;
   private String corCabelo;
   private String transtornoMental;
 
@@ -43,11 +43,11 @@ public class Pessoa {
     return this;
   }
 
-  public String getPesoAproximado() {
+  public Float getPesoAproximado() {
     return pesoAproximado;
   }
 
-  public Pessoa setPesoAproximado(String pesoAproximado) {
+  public Pessoa setPesoAproximado(Float pesoAproximado) {
     this.pesoAproximado = pesoAproximado;
     return this;
   }
@@ -106,11 +106,11 @@ public class Pessoa {
     return this;
   }
 
-  public String getAlturaAproximada() {
+  public Float getAlturaAproximada() {
     return alturaAproximada;
   }
 
-  public Pessoa setAlturaAproximada(String alturaAproximada) {
+  public Pessoa setAlturaAproximada(Float alturaAproximada) {
     this.alturaAproximada = alturaAproximada;
     return this;
   }

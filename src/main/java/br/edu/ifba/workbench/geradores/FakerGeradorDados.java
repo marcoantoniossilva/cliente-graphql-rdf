@@ -104,7 +104,7 @@ public class FakerGeradorDados implements IGeradorDados {
             .setCodPessoa(indice)
             .setImagem(this.faker.avatar().image())
             .setSexo(this.obterValorAleatorioDeUmArray(Constantes.SEXOS_DISPONIVEIS))
-            .setPesoAproximado(String.valueOf(Math.random() * (110 - 45) + 45))
+            .setPesoAproximado((float) Math.random() * (110 - 45) + 45)
             .setCorPele(this.obterValorAleatorioDeUmArray(Constantes.CORES_PELE_DISPONIVEIS))
             .setCorOlhos(this.obterValorAleatorioDeUmArray(Constantes.CORES_OLHOS_DISPONIVEIS))
             .setDataNascimento(Constantes.FORMATADOR_DATA.format(this.obterDataRandomica()))
@@ -114,7 +114,7 @@ public class FakerGeradorDados implements IGeradorDados {
                 this.obterValorAleatorioDeUmArray(Constantes.MARCAS_DISPONIVEIS)
                     + " em "
                     + this.obterValorAleatorioDeUmArray(Constantes.LOCAIS_MARCA_DISPONIVEIS))
-            .setAlturaAproximada(String.valueOf(Math.random() * (2 - 1.5) + 1.5))
+            .setAlturaAproximada((float) (Math.random() * (2 - 1.5) + 1.5))
             .setCorCabelo(this.obterValorAleatorioDeUmArray(Constantes.CORES_CABELOS_DISPONIVEIS))
             .setTranstornoMental(this.obterValorAleatorioDeUmArray(Constantes.TRANSTORNOS_MENTAIS_DISPONIVEIS))
         ).collect(Collectors.toList());

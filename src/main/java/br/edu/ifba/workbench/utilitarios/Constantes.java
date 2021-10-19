@@ -4,19 +4,8 @@ import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Locale;
 
+
 public class Constantes {
-
-//  public static final Integer qtdBairrosParaGerar = 20000;
-//  public static final Integer qtdCidadesParaGerar = 5600;
-//  public static final Integer qtdLocaisParaGerar = 20000;
-//  public static final Integer qtdPessoasParaGerar = 3000;
-//  public static final Integer qtdDesaparecimentosParaGerar = 3000;
-
-  public static final Integer qtdBairrosParaGerar = 20;
-  public static final Integer qtdCidadesParaGerar = 5;
-  public static final Integer qtdLocaisParaGerar = 20;
-  public static final Integer qtdPessoasParaGerar = 3;
-  public static final Integer qtdDesaparecimentosParaGerar = 3;
 
   public static final DateFormat FORMATADOR_DATA = new SimpleDateFormat("yyyy-MM-dd");
   public static final DateFormat FORMATADOR_HORA = new SimpleDateFormat("HH:mm");
@@ -59,4 +48,13 @@ public class Constantes {
       "braço direito",
       "braço direito"};
   public static final String[] MARCAS_DISPONIVEIS = {"Mancha", "Cicatriz", "Tatuagem"};
+
+  public static class DadosPadrao {
+    public static final Integer QTD_BAIRROS_PARA_GERAR = 20000;
+    public static final Integer QTD_CIDADES_PARA_GERAR = 5600;
+    public static final Integer QTD_LOCAIS_PARA_GERAR = 20000;
+    public static final Integer QTD_PESSOAS_PARA_GERAR = 3000;
+    public static final Integer QTD_DESAPARECIMENTOS_PARA_GERAR = 3000;
+  }
+
 }
