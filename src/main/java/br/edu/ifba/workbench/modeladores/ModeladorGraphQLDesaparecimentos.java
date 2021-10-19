@@ -90,4 +90,14 @@ public class ModeladorGraphQLDesaparecimentos {
         """;
   }
 
+  public String montarQueryDeTotalDeDesaparecimentos() {
+    return """
+        query {
+          desaparecimentosCount {
+            total
+          }
+        }
+        """;
+  }
+
 }

@@ -22,13 +22,14 @@ public class LeitorGraphQL implements ILeitorDados {
 
   @Override
   public void ler() throws IOException {
-    String queryDeDesaparecimentos = this.modeladorGraphQL.montarQueryDeDesaparecimentos();
+//    String queryDeDesaparecimentos = this.modeladorGraphQL.montarQueryDeDesaparecimentos();
+    String queryDeDesaparecimentos = this.modeladorGraphQL.montarQueryDeTotalDeDesaparecimentos();
     String respostaApi = this.clienteGraphQL.executar(
       CorpoRequisicaoGraphQL.builder()
         .query(queryDeDesaparecimentos)
         .build()
     );
-    //LOGGER.info("Resposta da API GraphQL para chamada de leitura de desaparecimentos: {}", respostaApi);
+//    LOGGER.info("Resposta da API GraphQL para chamada de leitura de desaparecimentos: {}", respostaApi);
   }
 
 }

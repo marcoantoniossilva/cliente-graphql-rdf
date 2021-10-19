@@ -50,11 +50,11 @@ public class Constantes {
   public static final String[] MARCAS_DISPONIVEIS = {"Mancha", "Cicatriz", "Tatuagem"};
 
   public static class DadosPadrao {
-    public static final Integer QTD_BAIRROS_PARA_GERAR = 20000;
-    public static final Integer QTD_CIDADES_PARA_GERAR = 5600;
-    public static final Integer QTD_LOCAIS_PARA_GERAR = 20000;
-    public static final Integer QTD_PESSOAS_PARA_GERAR = 3000;
-    public static final Integer QTD_DESAPARECIMENTOS_PARA_GERAR = 3000;
+    public static final Integer QTD_BAIRROS_PARA_GERAR = 5000;
+    public static final Integer QTD_CIDADES_PARA_GERAR = 2500;
+    public static final Integer QTD_LOCAIS_PARA_GERAR = 10000;
+    public static final Integer QTD_PESSOAS_PARA_GERAR = 1000;
+    public static final Integer QTD_DESAPARECIMENTOS_PARA_GERAR = 1000;
   }
 
 }

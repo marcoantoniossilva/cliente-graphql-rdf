@@ -84,4 +84,11 @@ public class ModeladorRDFDesaparecimentos {
         }""";
   }
 
+  public String montarQueryDeTotalDeDesaparecimentos() {
+    return Constantes.PREFIXO + """
+        SELECT (count(*) as ?totalDesaparecimentos)
+        WHERE {
+          ?desaparecimento relembrar:estaAssociado ?pessoa
+        }""";
+  }
 }

@@ -36,8 +36,8 @@ public class LeitorRDF implements ILeitorDados {
     try (OutputStream respostaSPARQL = new ByteArrayOutputStream()) {
       ResultSetFormatter.out(respostaSPARQL, results, query);
 
+      LOGGER.info("Resposta da ontologia para chamada de leitura de desaparecimentos: {}", respostaSPARQL);
       queryExecution.close();
-      LOGGER.info("Resposta do SPARQL para chamada de leitura de desaparecimentos: {}", respostaSPARQL);
     }
   }
 }

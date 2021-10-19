@@ -33,6 +33,7 @@ public class Povoador {
       List<Local> locais = geradorDados.gerarLocais(DadosPadrao.QTD_LOCAIS_PARA_GERAR, DadosPadrao.QTD_BAIRROS_PARA_GERAR);
       List<Pessoa> pessoas = geradorDados.gerarPessoas(DadosPadrao.QTD_PESSOAS_PARA_GERAR);
 
+      LOGGER.info("Povoando dados prévios");
       for (IEscritorDados escritorDados : escritoresDados) {
         escritorDados.escreverUfs(ufs);
         escritorDados.escreverCidades(cidades);
@@ -40,6 +41,7 @@ public class Povoador {
         escritorDados.escreverLocais(locais);
         escritorDados.escreverPessoas(pessoas);
       }
+      LOGGER.info("Povoamento concluído");
     } catch (IOException exception) {
       LOGGER.error(exception.getMessage(), exception);
     }

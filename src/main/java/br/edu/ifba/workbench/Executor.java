@@ -8,7 +8,7 @@ import br.edu.ifba.workbench.geradores.IGeradorDados;
 import br.edu.ifba.workbench.leitores.ILeitorDados;
 import br.edu.ifba.workbench.leitores.LeitorGraphQL;
 import br.edu.ifba.workbench.leitores.LeitorRDF;
-import br.edu.ifba.workbench.modelos.*;
+import br.edu.ifba.workbench.modelos.Desaparecimento;
 import br.edu.ifba.workbench.testes.ITestador;
 import br.edu.ifba.workbench.testes.ResultadoTeste;
 import br.edu.ifba.workbench.testes.Testador;
