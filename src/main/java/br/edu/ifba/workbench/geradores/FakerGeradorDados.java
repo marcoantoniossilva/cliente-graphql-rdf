@@ -6,7 +6,7 @@ import com.github.javafaker.Faker;
 
 import java.time.LocalDate;
 import java.time.ZoneId;
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 import java.util.Random;
@@ -35,35 +35,35 @@ public class FakerGeradorDados implements IGeradorDados {
 
   @Override
   public List<Uf> gerarUfs() {
-    List<Uf> ufs = new ArrayList<Uf>();
-    ufs.add(new Uf(1,"AC"));
-    ufs.add(new Uf(2,"AL"));
-    ufs.add(new Uf(3,"AP"));
-    ufs.add(new Uf(4,"AM"));
-    ufs.add(new Uf(5,"BA"));
-    ufs.add(new Uf(6,"CE"));
-    ufs.add(new Uf(7,"DF"));
-    ufs.add(new Uf(8,"ES"));
-    ufs.add(new Uf(9,"GO"));
-    ufs.add(new Uf(10,"MA"));
-    ufs.add(new Uf(11,"MT"));
-    ufs.add(new Uf(12,"MS"));
-    ufs.add(new Uf(13,"MG"));
-    ufs.add(new Uf(14,"PA"));
-    ufs.add(new Uf(15,"PB"));
-    ufs.add(new Uf(16,"PR"));
-    ufs.add(new Uf(17,"PE"));
-    ufs.add(new Uf(18,"PI"));
-    ufs.add(new Uf(19,"RR"));
-    ufs.add(new Uf(20,"RO"));
-    ufs.add(new Uf(21,"RJ"));
-    ufs.add(new Uf(22,"RN"));
-    ufs.add(new Uf(23,"RS"));
-    ufs.add(new Uf(24,"SC"));
-    ufs.add(new Uf(25,"SP"));
-    ufs.add(new Uf(26,"SE"));
-    ufs.add(new Uf(27,"TO"));
-    return ufs;
+    return Arrays.asList(
+        new Uf(1, "AC"),
+        new Uf(2, "AL"),
+        new Uf(3, "AP"),
+        new Uf(4, "AM"),
+        new Uf(5, "BA"),
+        new Uf(6, "CE"),
+        new Uf(7, "DF"),
+        new Uf(8, "ES"),
+        new Uf(9, "GO"),
+        new Uf(10, "MA"),
+        new Uf(11, "MT"),
+        new Uf(12, "MS"),
+        new Uf(13, "MG"),
+        new Uf(14, "PA"),
+        new Uf(15, "PB"),
+        new Uf(16, "PR"),
+        new Uf(17, "PE"),
+        new Uf(18, "PI"),
+        new Uf(19, "RR"),
+        new Uf(20, "RO"),
+        new Uf(21, "RJ"),
+        new Uf(22, "RN"),
+        new Uf(23, "RS"),
+        new Uf(24, "SC"),
+        new Uf(25, "SP"),
+        new Uf(26, "SE"),
+        new Uf(27, "TO")
+        );
   }
 
   @Override
