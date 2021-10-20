@@ -2,3 +2,4 @@ target
 out
 src/main/resources/Relembrar - Original.owl
 src/main/resources/reset.bat
+src/main/resources/delete.sql

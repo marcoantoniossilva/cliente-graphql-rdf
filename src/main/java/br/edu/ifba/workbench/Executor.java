@@ -9,6 +9,7 @@ import br.edu.ifba.workbench.leitores.ILeitorDados;
 import br.edu.ifba.workbench.leitores.LeitorGraphQL;
 import br.edu.ifba.workbench.leitores.LeitorRDF;
 import br.edu.ifba.workbench.modelos.Desaparecimento;
+import br.edu.ifba.workbench.povoadores.Povoador;
 import br.edu.ifba.workbench.testes.ITestador;
 import br.edu.ifba.workbench.testes.ResultadoTeste;
 import br.edu.ifba.workbench.testes.Testador;
@@ -22,7 +23,7 @@ public class Executor {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(Executor.class);
 
-  public static void main(String[] args) {
+  public static void main(String[] args) throws InterruptedException {
     LOGGER.info("Inicializando aplicação Java versão 16.");
     LOGGER.info("Servidor GraphQL localizado em {}", Constantes.URL_SERVIDOR_GRAPHQL);
     LOGGER.info("Ontologia RDF localizada em {}", Constantes.URI_ONTOLOGIA_RDF);

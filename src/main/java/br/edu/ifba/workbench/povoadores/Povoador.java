@@ -1,4 +1,4 @@
-package br.edu.ifba.workbench;
+package br.edu.ifba.workbench.povoadores;
 
 import br.edu.ifba.workbench.escritores.IEscritorDados;
 import br.edu.ifba.workbench.geradores.IGeradorDados;

@@ -81,7 +81,9 @@ public class EscritorRDF implements IEscritorDados {
   public void chamarEscritaRdf(String insert) throws IOException {
     UpdateRequest request = UpdateFactory.create(insert);
     UpdateAction.execute(request, modelo);
-    modelo.write(new PrintWriter(Constantes.URI_ONTOLOGIA_RDF));
+    try (PrintWriter printWriter = new PrintWriter(Constantes.URI_ONTOLOGIA_RDF)){
+      modelo.write(printWriter);
+    }
   }
 
 }

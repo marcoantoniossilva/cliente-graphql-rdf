@@ -18,15 +18,16 @@ public class LeitorRDF implements ILeitorDados {
   private static final Logger LOGGER = LoggerFactory.getLogger(LeitorRDF.class);
 
   private final ModeladorRDFDesaparecimentos modeladorRDF;
-  private final OntModel modelo;
+  private final String uriOntologiaRDF;
 
   public LeitorRDF(String uriOntologiaRDF) {
-    this.modelo = (OntModel) ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM).read(new File(uriOntologiaRDF).toURI().toString());
+    this.uriOntologiaRDF = uriOntologiaRDF;
     this.modeladorRDF = new ModeladorRDFDesaparecimentos();
   }
 
   @Override
   public void ler() throws IOException {
+    OntModel modelo = (OntModel) ModelFactory.createOntologyModel(OntModelSpec.OWL_DL_MEM).read(new File(uriOntologiaRDF).toURI().toString());
     String queryDeDesaparecimentos = this.modeladorRDF.montarQueryDeDesaparecimentos();
 
     Query query = QueryFactory.create(queryDeDesaparecimentos);
@@ -36,7 +37,7 @@ public class LeitorRDF implements ILeitorDados {
     try (OutputStream respostaSPARQL = new ByteArrayOutputStream()) {
       ResultSetFormatter.out(respostaSPARQL, results, query);
 
-      LOGGER.info("Resposta da ontologia para chamada de leitura de desaparecimentos: {}", respostaSPARQL);
+//      LOGGER.info("Resposta da ontologia para chamada de leitura de desaparecimentos: {}", respostaSPARQL);
       queryExecution.close();
     }
   }
