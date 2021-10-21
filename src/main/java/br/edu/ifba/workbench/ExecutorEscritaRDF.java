@@ -19,29 +19,20 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List;
 
-public class Executor {
+public class ExecutorEscritaRDF {
 
-  private static final Logger LOGGER = LoggerFactory.getLogger(Executor.class);
+  private static final Logger LOGGER = LoggerFactory.getLogger(ExecutorEscritaRDF.class);
 
   public static void main(String[] args) {
     LOGGER.info("Inicializando aplicação Java versão 16.");
-    LOGGER.info("Servidor GraphQL localizado em {}", Constantes.URL_SERVIDOR_GRAPHQL);
     LOGGER.info("Ontologia RDF localizada em {}", Constantes.URI_ONTOLOGIA_RDF);
 
-    // Dependência comum GraphQL e RDF
+    // Gerador de dados falsos
     IGeradorDados geradorDados = new FakerGeradorDados();
-
-    // Dependências do GRAPHQL
-    IEscritorDados escritorGraphQL = new EscritorGraphQL(Constantes.URL_SERVIDOR_GRAPHQL);
-    ILeitorDados leitorGraphQL = new LeitorGraphQL(Constantes.URL_SERVIDOR_GRAPHQL);
 
     // Dependências do RDF
     IEscritorDados escritorRDF = new EscritorRDF(Constantes.URI_ONTOLOGIA_RDF);
     ILeitorDados leitorRDF = new LeitorRDF(Constantes.URI_ONTOLOGIA_RDF);
-
-    // Instanciação de classe responsável por gerar e povoar RDF e GraphQL com os mesmos dados
-    Povoador povoadorDados = new Povoador(geradorDados, escritorRDF, escritorGraphQL);
-    povoadorDados.povoarDadosPadrao();
 
     // Criação da lista de desaparecimentos para testes de leitura/escrita em RDF e GraphQL
     List<Desaparecimento> desaparecimentos = geradorDados.gerarDesaparecimentos(
@@ -49,22 +40,13 @@ public class Executor {
         Constantes.DadosPadrao.QTD_PESSOAS_PARA_GERAR,
         Constantes.DadosPadrao.QTD_LOCAIS_PARA_GERAR);
 
-    ITestador testadorGraphQL = new Testador(escritorGraphQL, leitorGraphQL);
     ITestador testadorRDF = new Testador(escritorRDF, leitorRDF);
 
     // Testes RDF
     ResultadoTeste resultadoTesteEscritaRDF = testadorRDF.testarEscrita(desaparecimentos);
-    ResultadoTeste resultadoTesteLeituraRDF = testadorRDF.testarLeitura();
 
     LOGGER.info("ResultadoTesteEscritaRDF: {}", resultadoTesteEscritaRDF);
-    LOGGER.info("ResultadoTesteLeituraRDF: {}", resultadoTesteLeituraRDF);
 
-    // Testes GraphQL
-    ResultadoTeste resultadoTesteEscritaGraphQL = testadorGraphQL.testarEscrita(desaparecimentos);
-    ResultadoTeste resultadoTesteLeituraGraphQL = testadorGraphQL.testarLeitura();
-
-    LOGGER.info("ResultadoTesteEscritaGraphQL: {}", resultadoTesteEscritaGraphQL);
-    LOGGER.info("ResultadoTesteLeituraGraphQL: {}", resultadoTesteLeituraGraphQL);
   }
 
 }
