@@ -1,0 +1,185 @@
+<rdf:RDF
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#" > 
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#corOlhos">
+    <rdfs:comment>Cor dos olhos da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#alturaAproximada">
+    <rdfs:comment>Altura aproximadas da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#transtornoMental">
+    <rdfs:comment>Caso haja, tipo de transtorno mental que a pessoa desaparecida apresenta.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#Cidade">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#Local">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#longitude">
+    <rdfs:comment>Data de nascimento da pessoa desaparecida.</rdfs:comment>
+    <owl:equivalentProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#longitude"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Local"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#nome">
+    <rdfs:comment>Nome da pessoa desaparecida.</rdfs:comment>
+    <owl:equivalentProperty rdf:resource="http://www.w3.org/2006/vcard/ns#given-name"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#imagem">
+    <rdfs:comment>Foto da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#dataNascimento">
+    <rdfs:comment>Data de nascimento da pessoa desaparecida.</rdfs:comment>
+    <owl:equivalentProperty rdf:resource="http://www.w3.org/2006/vcard/ns#bday"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#sigla">
+    <rdfs:comment>Sigla do estado em que se situa o local.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#UF"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#estaAssociado">
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdfs:range rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#boletimOcorrencia">
+    <rdfs:comment>Registro se houve ou não boletim de ocorrência do desaparecimento.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#eBairroDe">
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Bairro"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#nomeBairro">
+    <rdfs:comment>Nome do bairro em que ocorreu o desaparecimento.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Bairro"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#corPele">
+    <rdfs:comment>Cor da pele da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#eUmPontoDe">
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Local"/>
+    <rdfs:range rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Bairro"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#corCabelo">
+    <rdfs:comment>Cor do cabelo da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#informacoes">
+    <rdfs:comment>Informações extras sobre o desaparecimentos.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#fonte">
+    <rdfs:comment>URL da fonte de onde foram extraídas as informações sobre o desaparecimento.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#UF">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#dataDesaparecimento">
+    <rdfs:comment>Data aproximada do desaparecimento de uma pessoa.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#date"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#marcaCaracteristica">
+    <rdfs:comment>Caso haja, tipo de marca característica apresentada pela pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#latitude">
+    <rdfs:comment>Latitude aproximada do local.</rdfs:comment>
+    <owl:equivalentProperty rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#latitude"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Local"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#Bairro">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#tipoFisico">
+    <rdfs:comment>Tipo físico da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#eCidadeDe">
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Cidade"/>
+    <rdfs:range rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#UF"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#nomeCidade">
+    <rdfs:comment>Nome da cidade em que ocorreu o desaparecimento.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Cidade"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#ultimaHoraVista">
+    <rdfs:comment>Hora aproximada em que a pessoa foi vista pela última vez.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#ocorreuEm">
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Desaparecimento"/>
+    <rdfs:range rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Local"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#sexo">
+    <rdfs:comment>Sexo da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://ontologiarelembrar.github.io/ontologiarelembrar#pesoAproximado">
+    <rdfs:comment>Peso aproximado da pessoa desaparecida.</rdfs:comment>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:domain rdf:resource="http://ontologiarelembrar.github.io/ontologiarelembrar#Pessoa"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+  </rdf:Description>
+</rdf:RDF>
