@@ -4,6 +4,11 @@ Este sistema possui um cliente [GraphQL](https://graphql.org/) e um cliente RDF 
 
 <br/>
 
+## Vídeo de demonstração
+Clique [aqui](https://youtu.be/7X4wZDq72aQ) para ser direcionado à um vídeo de demonstração no Youtube.
+
+<br/>
+
 Para rodar o projeto e executar os testes, siga as etapas abaixo:
 ## 1 - Instale as dependências maven do arquivo [pom.xml](pom.xml)
 
